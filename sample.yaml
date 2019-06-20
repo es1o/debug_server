@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debug-server-deployment
+  labels:
+    app: debug-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: debug-server
+  template:
+    metadata:
+      labels:
+        app: debug-server
+    spec:
+      containers:
+      - name: debug-server
+        image: es1o/debug_server:latest
+        imagePullPolicy: Always
+        env:
+        - name: SERVER_PORT
+          value: "1234"
+        ports:
+        - containerPort: 1234

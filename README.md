@@ -13,3 +13,7 @@ Prints all environemnt variables.
 ### GET /healthz
 
 Returns health status.
+
+## Sample k8s yaml file
+
+`kubectl apply -f sample.yaml` - creates deployment with debug_server
