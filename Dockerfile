@@ -4,8 +4,8 @@ COPY Gemfile .
 
 RUN bundle install --without dev
 
-ENV PORT 80
+ENV SERVER_PORT 80
 
 COPY main.rb .
 
-CMD ruby main.rb -p $PORT
+CMD ruby main.rb -p $SERVER_PORT
