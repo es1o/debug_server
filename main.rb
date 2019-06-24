@@ -27,3 +27,11 @@ end
 get "/#{ENV['ROOT_URL']}/env" do
     json ENV.to_hash
 end
+
+get '/namez' do
+    json :service_name => ENV['SRV_NAME']
+end
+
+get "/#{ENV['ROOT_URL']}/namez" do
+    json :service_name => ENV['SRV_NAME']
+end

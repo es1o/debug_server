@@ -22,3 +22,4 @@ Returns health status.
 
 * `SERVER_PORT` => port that server listens on
 * `ROOT_URL`    => due to limitation of EKS ALB ingress all traffic is redirected to ingress_path/ instead of /. This env variable determines additional paths for endpoint, eg. if ROOT_URL = esio, endpoints `/env` and `/esio/env` will work.
+* `SRV_NAME`    => service name, visible under `/namez` endpoint
