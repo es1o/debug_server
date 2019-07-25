@@ -2,7 +2,7 @@ FROM ruby:2.5-alpine
 
 COPY Gemfile .
 
-RUN bundle install --without dev
+RUN bundle install --without dev test
 
 ENV SERVER_PORT 80
 
