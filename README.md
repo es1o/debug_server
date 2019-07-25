@@ -1,5 +1,7 @@
 # debug_server
 
+[![Build Status](https://travis-ci.org/es1o/debug_server.svg?branch=master)](https://travis-ci.org/es1o/debug_server)
+
 This is a repository with simple web server that exposes some debug information from kubernetes environment.
 
 ## Endpoints
