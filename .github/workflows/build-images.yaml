@@ -25,6 +25,11 @@ jobs:
         uses: docker/setup-qemu-action@333602ff380a7d40aa030ef0a9c6b6c1784fba49
         with:
           platforms: arm64,amd64
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@ee7ac3140a4780069b5976cedc4a5985b070ea10
@@ -36,4 +41,5 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
